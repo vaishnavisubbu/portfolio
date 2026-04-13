@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaishnavi S | Projects</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0d1b2d;
+      --card: rgba(255, 255, 255, 0.08);
+      --text: #f8fbff;
+      --muted: #bfd0e4;
+      --accent: #63d7ff;
+      --accent-2: #c084fc;
+      --border: rgba(255, 255, 255, 0.14);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+      --max-width: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(99, 215, 255, 0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(192, 132, 252, 0.16), transparent 30%),
+        linear-gradient(135deg, #07111f 0%, #091524 45%, #0d1b2d 100%);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.15;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.03em;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .glass {
+      background: var(--card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 17, 31, 0.68);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-wrap {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      padding: 9px 17px;
+      border-radius: 999px;
+      color: #eaf4ff;
+      font-size: 0.94rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.04);
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: white;
+      background: linear-gradient(90deg, rgba(99, 215, 255, 0.16), rgba(192, 132, 252, 0.16));
+      transform: translateY(-2px);
+    }
+
+    .menu-btn {
+      display: none;
+      background: transparent;
+      border: 0;
+      color: white;
+      font-size: 1.7rem;
+      cursor: pointer;
+    }
+
+    .projects-page {
+      padding: 34px 0 40px;
+    }
+
+    .section-title {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      width: fit-content;
+      padding: 8px 16px;
+      border: 1px solid rgba(99, 215, 255, 0.25);
+      border-radius: 999px;
+      background: rgba(99, 215, 255, 0.08);
+      color: #c8f2ff;
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .intro-text {
+      max-width: 850px;
+      font-size: 0.98rem;
+      line-height: 1.75;
+      margin-top: 4px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .project-card {
+      border-radius: 28px;
+      padding: 24px;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      min-height: 100%;
+    }
+
+    .project-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -50px -50px auto;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(99, 215, 255, 0.18), transparent 65%);
+      z-index: -1;
+    }
+
+    .project-card h3 {
+      margin-bottom: 12px;
+      min-height: 54px;
+    }
+
+    .project-card p {
+      margin-bottom: 18px;
+      line-height: 1.8;
+      font-size: 0.96rem;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .tech-list span {
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.86rem;
+      color: #e8f2fc;
+    }
+
+    .bottom-note {
+      margin-top: 20px;
+      padding: 18px 22px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .bottom-note p {
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+
+    .footer {
+      padding: 24px 0 28px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1080px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card h3 {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .projects-page {
+        padding: 24px 0 32px;
+      }
+
+      .menu-btn {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 72px;
+        left: 16px;
+        right: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px;
+        border-radius: 22px;
+        background: rgba(8, 18, 31, 0.96);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        display: none;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      h2 {
+        font-size: 2.1rem;
+      }
+
+      .project-card {
+        padding: 20px;
+      }
+
+      .intro-text {
+        font-size: 0.94rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-wrap">
+      <a href="home.html" class="brand">Vaishnavi subbu</a>
+      <button class="menu-btn" id="menuBtn">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="education.html">Education</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="projects-page">
+      <div class="container reveal">
+        <div class="section-title">
+          <span class="eyebrow">Projects</span>
+          <h2>Featured Work</h2>
+          <p class="intro-text">
+            These projects reflect my interest in software development, information management,
+            web technologies, and building practical solutions with clean structure and user-friendly design.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <div class="project-card glass">
+            <h3>Online Department Portal</h3>
+            <p>
+              Designed an information management system for student and staff data. This project
+              focused on secure handling of records, organized information display, and user-friendly navigation.
+            </p>
+            <div class="tech-list">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Bootstrap</span>
+              <span>Java</span>
+            </div>
+          </div>
+
+          <div class="project-card glass">
+            <h3>Learning Management System</h3>
+            <p>
+              Developed tools for monitoring academic performance and student support. The system
+              helped manage information clearly and provided useful support features for learners.
+            </p>
+            <div class="tech-list">
+              <span>PHP</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>MySQL</span>
+            </div>
+          </div>
+
+          <div class="project-card glass">
+            <h3>Intelligent Coating Process Calculation System</h3>
+            <p>
+              Built during internship, this web-based system handled chemical process calculations,
+              workflow automation, report generation, and role-based access for a structured industrial solution.
+            </p>
+            <div class="tech-list">
+              <span>Java Servlets</span>
+              <span>JDBC</span>
+              <span>MySQL</span>
+              <span>HTML/CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-note">
+          <p>
+            These projects helped me strengthen my skills in frontend design, backend logic,
+            database connectivity, and creating applications that solve practical problems in an organized way.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p style="color:#d8e7f4;">© 2026 Vaishnavi S. Designed as a premium personal portfolio website.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    if (menuBtn && navLinks) {
+      menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('show');
+        });
+      });
+    }
+
+    const reveals = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.96;
+
+      reveals.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        if (rect.top < triggerBottom) {
+          item.classList.add('active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+</body>
+</html>

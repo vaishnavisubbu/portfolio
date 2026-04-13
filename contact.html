@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vaishnavi S | Contact</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --card: rgba(255,255,255,0.08);
+      --text: #f8fbff;
+      --muted: #bfd0e4;
+      --border: rgba(255,255,255,0.14);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg,#07111f,#0d1b2d);
+      color: var(--text);
+    }
+
+    .container {
+      width: 90%;
+      margin: auto;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(7,17,31,0.8);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      z-index: 1000;
+    }
+
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-family: 'Poppins';
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .nav-links a {
+      margin-left: 10px;
+      padding: 8px 14px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.05);
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* SECTION FIX */
+    .contact-section {
+      padding: 30px 0 40px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      padding: 25px;
+    }
+
+    .eyebrow {
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(99,215,255,0.3);
+      font-size: 12px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .contact-box {
+      background: rgba(255,255,255,0.07);
+      padding: 14px;
+      border-radius: 14px;
+      margin-top: 10px;
+      font-size: 15px;
+    }
+
+    .link-btn {
+      display: block;
+      background: rgba(255,255,255,0.07);
+      padding: 14px;
+      border-radius: 14px;
+      margin-top: 15px;
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .link-btn:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="container nav-wrap">
+    <div class="brand">Vaishnavi subbu</div>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="education.html">Education</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="contact-section">
+  <div class="container">
+
+    <div class="contact-grid">
+
+      <!-- LEFT -->
+      <div class="card">
+        <span class="eyebrow">CONTACT</span>
+        <h2>Let’s Work Together</h2>
+
+        <p>
+          I am open to software development, web development, Java, PHP,
+          Flutter, and entry-level IT opportunities. I would love to contribute
+          my skills and continue learning in a professional environment.
+        </p>
+
+        <div class="contact-box">📞 +91 6379209889</div>
+        <div class="contact-box">📧 vaishnavi24janu@gmail.com</div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="card">
+        <span class="eyebrow">PROFILE LINKS</span>
+        <h2>LinkedIn & Resume</h2>
+
+        <p>
+          You can view my LinkedIn profile and download my resume using the links below.
+        </p>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/vaishnavi-subbu-bbb39025b/" target="_blank" class="link-btn">
+          🔗 View LinkedIn Profile
+        </a>
+
+        <!-- Resume Download -->
+        <a href="resume.pdf" download class="link-btn">
+          📄 Download Resume
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  © 2026 Vaishnavi S
+</footer>
+
+</body>
+</html>
